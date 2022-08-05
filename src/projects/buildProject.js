@@ -11,26 +11,28 @@ function buildProject(project) {
     let remove = document.createElement('button');
 
     checkbox.setAttribute('type', 'checkbox');
-    checkbox.setAttribute('id', listProjects.indexOf(project));
 
     title.classList.add('pTitle')
     title.setAttribute('for', listProjects.indexOf(project));
     title.innerText = project.title
 
     projectDivs.classList.add('projectDiv');
+    projectDivs.setAttribute('id', listProjects.indexOf(project));
 
     clickable.classList.add('clickToExpand');
     clickable.append(checkbox, title);
 
     add.classList.add('addTodo');
+    add.setAttribute('id', 'addTodo')
     add.innerHTML = 'Add Task'
 
     remove.classList.add('removeProject')
+    remove.setAttribute('id', 'removeProject')
     remove.innerHTML = 'Remove Project'
 
     expand.classList.add('expandContent');
     expand.append(add, remove)
-    
+
     projectDivs.append(clickable, expand)
     projectDisplay.appendChild(projectDivs);
 };

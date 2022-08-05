@@ -1,5 +1,5 @@
-let defaultProject;
 let listProjects = [];
+let defaultProject;
 class project {
     constructor(title) {
         this.title = title;
