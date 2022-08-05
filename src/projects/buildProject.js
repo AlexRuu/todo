@@ -22,8 +22,8 @@ function buildProject(project) {
     clickable.classList.add('clickToExpand');
     clickable.append(checkbox, title);
 
-    add.classList.add('addTodo');
-    add.setAttribute('id', 'addTodo')
+    add.classList.add('addTask');
+    add.setAttribute('id', 'addTask')
     add.innerHTML = 'Add Task'
 
     remove.classList.add('removeProject')

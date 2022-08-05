@@ -2,7 +2,8 @@ import { createProject } from "./projects/createProject";
 import { renderProjects } from "./projects/renderProject"
 import { expand } from "./expand"
 import { createTodo } from "./todoList/createTodo";
-import { getProjectID } from "./getIDs";
+import { getProjectID } from "./taskAdd";
+
 import './style.css'
 
 let projectSub = document.querySelector('#submitProject');
@@ -19,7 +20,6 @@ projectSub.addEventListener('click', (e) => {
     createProject();
     renderProjects();
     expand();
-    getProjectID();
 });
 
 sub.addEventListener('click', (e) => {
