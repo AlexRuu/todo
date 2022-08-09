@@ -1,6 +1,6 @@
 import { createProject } from "./projects/createProject";
 import { renderProjects } from "./projects/renderProject"
-import { expand } from "./expand"
+import { expandProject } from "./expand"
 import { createTodo } from "./todoList/createTodo";
 import { getProjectID } from "./taskAdd";
 
@@ -11,7 +11,7 @@ let sub = document.querySelector('#submit')
 
 window.addEventListener('load', () => {
     renderProjects();
-    expand();
+    expandProject();
     getProjectID();
 })
 
@@ -19,10 +19,14 @@ projectSub.addEventListener('click', (e) => {
     e.preventDefault();
     createProject();
     renderProjects();
-    expand();
+    expandProject();
+    getProjectID();
 });
 
 sub.addEventListener('click', (e) => {
     e.preventDefault();
     createTodo();
+    renderProjects();
+    expandProject();
+    getProjectID();
 })

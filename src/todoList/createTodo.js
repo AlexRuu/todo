@@ -11,6 +11,9 @@ class todo {
     }
 }
 
+let defaultTask = new todo ('Sample Title', 'Description goes here', '2022/03/23', 'High', '0')
+todoList.push(defaultTask)
+
 function createTodo() {
     let newTodo;
     let todoForm = document.querySelector('.addTodo')

@@ -1,8 +1,7 @@
 import { renderProjects } from "./projects/renderProject";
 
-function expand() {
-    renderProjects();
-    const expand = document.getElementsByClassName("clickToExpand");
+function expandProject() {
+    const expand = document.getElementsByClassName("pTitle");
 
     for (let i = 0; i < expand.length; i++) {
         expand[i].addEventListener("click", function () {
@@ -17,7 +16,11 @@ function expand() {
     }
 }
 
+function expandTodo() {
+
+}
 
 export {
-    expand
+    expandProject,
+    expandTodo
 }
