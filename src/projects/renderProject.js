@@ -21,6 +21,22 @@ function renderProjects() {
     };
 };
 
+function retrieveProjects() {
+    if(!localStorage.listProjects && !localStorage.todoList) {
+        renderProjects();
+    }
+    else {
+        let obj = localStorage.getItem('listProjects');
+        let objTwo = localStorage.getItem('todoList')
+        obj = JSON.parse(obj);
+        objTwo = JSON.parse(objTwo)
+        listProjects = obj;
+        todoList = objTwo;
+        renderProjects();
+    }
+}
+
 export {
-    renderProjects
+    renderProjects,
+    retrieveProjects
 }

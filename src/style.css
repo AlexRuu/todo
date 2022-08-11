@@ -1,9 +1,9 @@
-.clickToExpand {
+.pTitle, .taskTitle {
     cursor: pointer;
     width: 100%;
 }
 
-.expandContent {
+.expandContent, .expandTask {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;

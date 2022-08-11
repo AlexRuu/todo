@@ -16,7 +16,11 @@ function createProject() {
     newProject = new project(projectTitle);
     listProjects.push(newProject);
     document.forms[0].reset();
-    console.log(listProjects)
+    localProject();
+}
+
+function localProject() {
+    localStorage.setItem(`listProjects`, JSON.stringify(listProjects));
 }
 
 export {

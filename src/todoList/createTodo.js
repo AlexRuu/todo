@@ -25,8 +25,12 @@ function createTodo() {
 
     newTodo = new todo(tTitle, tDescription, tDate, tPriority, tProject);
     todoList.push(newTodo);
+    localTask();
     todoForm.reset();
-    console.log(todoList);
+}
+
+function localTask() {
+    localStorage.setItem(`todoList`, JSON.stringify(todoList));
 }
 
 export {
