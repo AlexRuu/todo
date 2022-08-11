@@ -6,18 +6,29 @@
     <title>To Do...</title>
 </head>
 <body>
+    <div class="documentTitle">
+        <h1 id="documentTitle">Todo Notepad</h1>
+    </div>
     <div class="container">
         <div class="addProject">
             <button id="createNew">New Project</button>
         </div>
         <div class="createProject">
             <form class="project">
+                <div class="formTitle">
+                    <p id="createNewTitle">Create New Project</p>
+                    <div id="closeProject">&times;</div>
+                </div>
                 <input type="text" id="projectTitle" name="projectTitle" placeholder="Project Title">
                 <input type="submit" id="submitProject" value="Add Project">
             </form>
         </div>
         <div class="addToList">
             <form class="addTodo">
+                <div class="taskTitle">
+                    <p id="taskTitle">Add New Task</p>
+                    <div id="closeTask">&times;</div>
+                </div>
                 <div class="fields" id="todoT">
                     <label for="title">Title </label>
                     <input type="text" id="title" name="title">

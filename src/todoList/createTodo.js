@@ -35,5 +35,6 @@ function localTask() {
 
 export {
     createTodo,
-    todoList
+    todoList,
+    localTask
 }

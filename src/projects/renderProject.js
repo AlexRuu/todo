@@ -14,17 +14,20 @@ function renderProjects() {
             if (todoList[j].project === projectID[i].id) {
                 buildTodo(todoList[j], i)
             }
-            else {
-                continue;
-            }
         }
     };
 };
 
 function retrieveProjects() {
-    if(!localStorage.listProjects && !localStorage.todoList) {
+    if (!localStorage.listProjects && !localStorage.todoList) {
         renderProjects();
     }
+    else if (localStorage.listProjects && !localStorage.todoList) {
+        let obj = localStorage.getItem('listProjects');
+        obj = JSON.parse(obj);
+        listProjects = obj;
+        renderProjects();
+    } 
     else {
         let obj = localStorage.getItem('listProjects');
         let objTwo = localStorage.getItem('todoList')

@@ -14,9 +14,15 @@ function createProject() {
     let projectTitle = document.querySelector('#projectTitle').value;
 
     newProject = new project(projectTitle);
-    listProjects.push(newProject);
-    document.forms[0].reset();
-    localProject();
+    if (projectTitle === '') {
+        alert('Please fill out title')
+    }
+    else{
+        listProjects.push(newProject);
+        document.forms[0].reset();
+        localProject();
+        console.log(listProjects)
+    }
 }
 
 function localProject() {
@@ -26,4 +32,5 @@ function localProject() {
 export {
     createProject,
     listProjects,
+    localProject
 }
