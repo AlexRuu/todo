@@ -1,3 +1,4 @@
+import { format, parseISO } from 'date-fns'
 import { todoList } from "./createTodo";
 
 function buildTodo(todo, number) {
@@ -15,7 +16,7 @@ function buildTodo(todo, number) {
     task.setAttribute('id', `taskList${todoList.indexOf(todo)}`);
 
     checkbox.setAttribute('type', 'checkbox');
-    
+
     title.classList.add('taskTitle');
     title.innerText = todo.title
     title.setAttribute('for', `taskList${todoList.indexOf(todo)}`);
@@ -23,12 +24,14 @@ function buildTodo(todo, number) {
     taskInfo.classList.add('expandTask');
 
     dueDate.classList.add('taskDue');
-    dueDate.innerText = todo.dueDate;
+    let formatted = format(parseISO(todo.dueDate, 1), 'PPP')
+    dueDate.innerText = formatted;
 
     description.classList.add('taskDescription');
     description.innerText = todo.description;
 
     edit.classList.add('editTask');
+    edit.setAttribute('id', 'removeTask')
     edit.innerHTML = 'Edit';
 
     remove.classList.add('removeTask');

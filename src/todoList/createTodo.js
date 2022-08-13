@@ -1,17 +1,17 @@
-import { parentID } from "../taskAdd"
+import { parentID } from "./taskAdd"
 let todoList = [];
 
 class todo {
-    constructor(title, description, dueDate, priority, project) {
+    constructor(title, dueDate, priority, description, project) {
         this.title = title;
-        this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.description = description;
         this.project = project
     }
 }
 
-let defaultTask = new todo ('Sample Title', 'Description goes here', '2022/03/23', 'High', '0')
+let defaultTask = new todo('Sample Title', '2022-03-23', 'High', 'Description goes here', '0')
 todoList.push(defaultTask)
 
 function createTodo() {
@@ -23,7 +23,7 @@ function createTodo() {
     let tPriority = document.querySelector('#priority').value;
     let tProject = parentID;
 
-    newTodo = new todo(tTitle, tDescription, tDate, tPriority, tProject);
+    newTodo = new todo(tTitle, tDate, tPriority, tDescription, tProject);
     todoList.push(newTodo);
     localTask();
     todoForm.reset();

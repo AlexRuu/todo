@@ -50,9 +50,14 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.formTitle {
+.formTitle, .taskFormTitle {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4rem;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
 }
