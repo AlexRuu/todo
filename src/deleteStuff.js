@@ -8,7 +8,7 @@ import { localProject } from "./projects/createProject";
 function deleteProject() {
     let removeP = document.querySelectorAll('.removeProject');
     removeP.forEach((button) => {
-        button.addEventListener('click', function(){
+        button.addEventListener('click', function () {
             let grandparent = this.parentElement.parentElement.id;
             listProjects.splice(grandparent, 1);
             localProject();
@@ -19,22 +19,28 @@ function deleteProject() {
                 };
             };
             renderProjects();
+            deleteProject();
+            deleteTask();
             expandProject();
+            getProjectID();
             expandTodo();
         });
-    });    
+    });
 };
 
 function deleteTask() {
     let removeTask = document.querySelectorAll('.removeTask');
     removeTask.forEach((button) => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             let task = this.parentElement.parentElement.id;
             let taskID = task.charAt(task.length - 1);
             todoList.splice(taskID, 1);
             localTask();
-            renderProjects();
+            rrenderProjects();
+            deleteProject();
+            deleteTask();
             expandProject();
+            getProjectID();
             expandTodo();
         })
     })

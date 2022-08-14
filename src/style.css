@@ -19,7 +19,7 @@
     transition: max-height 0.2s ease-out;
 }
 
-.createProject, .addToList {
+.createProject, .addToList, .editTask {
     display: none;
     z-index: 1;
     position: fixed;
@@ -32,7 +32,7 @@
     background-color: rgb(0, 0, 0, 0.3);
 }
 
-.project, .addTodo {
+.project, .addTodo, .editTodo {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -50,11 +50,22 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.formTitle, .taskFormTitle {
+.formTitle, .taskFormTitle, .editFormTitle {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.formTitle {
     gap: 4rem;
+}
+
+.taskFormTitle {
+    gap: 6rem;
+}
+
+.editFormTitle {
+    gap: 6rem;;
 }
 
 .fields {

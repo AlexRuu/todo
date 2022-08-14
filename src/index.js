@@ -8,9 +8,8 @@ import { editTask } from "./todoList/edit";
 import './style.css'
 
 let projectSub = document.querySelector('#submitProject');
-let sub = document.querySelector('#submit')
+let sub = document.querySelector('#submitTask')
 
-editTask();
 window.addEventListener('load', () => {
     retrieveProjects();
     renderProjects();
@@ -51,7 +50,8 @@ let addProject = document.querySelector('#createNew');
 let closeProject = document.querySelector('#closeProject')
 let newTask = document.querySelector('.addToList');
 let closeTask = document.querySelector('#closeTask');
-let taskForm = document.forms['addTodo'];
+let editForm = document.querySelector('.editTask');
+let closeEdit = document.querySelector('#closeEdit');
 
 addProject.onclick = () => {
     newProject.style.display = 'block';
@@ -64,7 +64,6 @@ closeProject.onclick = () => {
 document.addEventListener('click', function (e) {
     if (e.target && e.target.id === 'addTask') {
         newTask.style.display = 'block';
-        taskForm.reset();
     }
 })
 
@@ -72,11 +71,20 @@ closeTask.onclick = () => {
     newTask.style.display = 'none';
 }
 
+closeEdit.onclick = () => {
+    editForm.style.display = 'none';
+}
+
 window.onclick = (e) => {
-    if (e.target == newProject) {
+    if (e.target === newProject) {
         newProject.style.display = 'none';
     };
-    if (e.target == newTask) {
+    if (e.target === newTask) {
         newTask.style.display = 'none';
+    };
+    if (e.target === editForm) {
+        editForm.style.display = 'none';
     }
 };
+
+editTask();

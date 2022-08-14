@@ -1,60 +1,93 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do...</title>
-</head>
-<body>
-    <div class="documentTitle">
-        <h1 id="documentTitle">Todo Notepad</h1>
-    </div>
-    <div class="container">
-        <div class="addProject">
-            <button id="createNew">New Project</button>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do...</title>
+    </head>
+
+    <body>
+        <div class="documentTitle">
+            <h1 id="documentTitle">Todo Notepad</h1>
         </div>
-        <div class="createProject">
-            <form class="project">
-                <div class="formTitle">
-                    <p id="createNewTitle">Create New Project</p>
-                    <div id="closeProject">&times;</div>
-                </div>
-                <input type="text" id="projectTitle" name="projectTitle" placeholder="Project Title">
-                <input type="submit" id="submitProject" value="Add Project">
-            </form>
-        </div>
-        <div class="addToList">
-            <form class="addTodo" id="addTodo" name="addTodo">
-                <div class="taskFormTitle">
-                    <p id="taskTitle">Add New Task</p>
-                    <div id="closeTask">&times;</div>
-                </div>
-                <div class="fields" id="todoT">
-                    <label for="title">Title </label>
-                    <input type="text" id="title" name="title">
-                </div>
-                <div class="fields" id="todoDD">
-                    <label for="date">Due Date </label>
-                    <input type="date" id="date" name="date">
-                </div>
-                <div class="fields" id="todoP">
-                    <label for="priority">Priority </label>
-                    <select name="priorityT" id="priority">
-                        <option disabled selected value> Select priorty level </option>
-                        <option value="High">High</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Low">Low</option>
-                    </select>
-                    <div class="fields" id="todoD">
-                        <label for="description">Description </label>
-                        <input type="text" id="description" name="description">
+        <div class="container">
+            <div class="addProject">
+                <button id="createNew">New Project</button>
+            </div>
+            <div class="createProject">
+                <form class="project">
+                    <div class="formTitle">
+                        <p id="createNewTitle">Create New Project</p>
+                        <div id="closeProject">&times;</div>
                     </div>
-                </div>
-                <input type="submit" id="submit">
-            </form>
+                    <input type="text" id="projectTitle" name="projectTitle" placeholder="Project Title">
+                    <input type="submit" id="submitProject" value="Add Project">
+                </form>
+            </div>
+            <div class="addToList">
+                <form class="addTodo" id="addTodo" name="addTodo">
+                    <div class="taskFormTitle">
+                        <p id="taskTitle">Add New Task</p>
+                        <div id="closeTask">&times;</div>
+                    </div>
+                    <div class="fields" id="todoT">
+                        <label for="title">Title </label>
+                        <input type="text" id="title" name="title">
+                    </div>
+                    <div class="fields" id="todoDD">
+                        <label for="date">Due Date </label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="fields" id="todoP">
+                        <label for="priority">Priority </label>
+                        <select name="priorityT" id="priority">
+                            <option disabled selected value> Select priorty level </option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                        <div class="fields" id="todoD">
+                            <label for="description">Description </label>
+                            <textarea id="description" name="description" rows="4" cols="10"></textarea>
+                        </div>
+                    </div>
+                    <input type="submit" id="submitTask">
+                </form>
+            </div>
+            <div class="editTask">
+                <form class="editTodo" id="editTodo" name="editTodo">
+                    <div class="editFormTitle">
+                        <p id="editTitle">Edit Task</p>
+                        <div class="close" id="closeEdit">&times;</div>
+                    </div>
+                    <div class="fields">
+                        <label for="eTitle">Title </label>
+                        <input type="text" id="eTitle" name="eTitle">
+                    </div>
+                    <div class="fields">
+                        <label for="eDate">Due Date </label>
+                        <input type="date" id="eDate" name="eDate">
+                    </div>
+                    <div class="fields">
+                        <label for="ePriority">Priority </label>
+                        <select name="ePriorityT" id="ePriority">
+                            <option disabled selected value> Select priorty level </option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                        <div class="fields">
+                            <label for="eDescription">Description </label>
+                            <textarea id="eDescription" name="eDescription" rows="4" cols="10"></textarea>
+                        </div>
+                    </div>
+                    <input type="submit" id="submitEdit">
+                </form>
+            </div>
+            <div class="projectDisplay"></div>
         </div>
-        <div class="projectDisplay"></div>
-    </div>
-    <script src="bundle.js"></script>
-</body>
+        <script src="bundle.js"></script>
+    </body>
+
 </html>

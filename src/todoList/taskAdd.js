@@ -5,7 +5,6 @@ function getProjectID() {
     add.forEach((button) => {
         button.addEventListener('click', function() {
             parentID = button.parentElement.parentElement.id;
-            console.log(parentID)
         })
     })
 }

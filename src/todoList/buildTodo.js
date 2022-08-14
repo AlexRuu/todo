@@ -30,8 +30,8 @@ function buildTodo(todo, number) {
     description.classList.add('taskDescription');
     description.innerText = todo.description;
 
-    edit.classList.add('editTask');
-    edit.setAttribute('id', 'removeTask')
+    edit.classList.add('editTaskButton');
+    edit.setAttribute('id', 'editTaskButton');
     edit.innerHTML = 'Edit';
 
     remove.classList.add('removeTask');
