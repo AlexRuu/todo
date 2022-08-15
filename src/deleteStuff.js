@@ -36,7 +36,7 @@ function deleteTask() {
             let taskID = task.charAt(task.length - 1);
             todoList.splice(taskID, 1);
             localTask();
-            rrenderProjects();
+            renderProjects();
             deleteProject();
             deleteTask();
             expandProject();
