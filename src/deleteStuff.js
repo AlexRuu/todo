@@ -4,6 +4,7 @@ import { renderProjects } from "./projects/renderProject";
 import { expandProject, expandTodo } from "./expand"
 import { localTask } from "./todoList/createTodo";
 import { localProject } from "./projects/createProject";
+import { getProjectID } from "./todoList/taskAdd";
 
 function deleteProject() {
     let removeP = document.querySelectorAll('.removeProject');
