@@ -1,10 +1,11 @@
 import { createProject } from "./projects/createProject";
 import { renderProjects, retrieveProjects } from "./projects/renderProject"
 import { expandProject, expandTodo } from "./expand"
-import { createTodo, todoList } from "./todoList/createTodo";
+import { createTodo } from "./todoList/createTodo";
 import { getProjectID } from "./todoList/taskAdd";
 import { deleteProject, deleteTask } from "./deleteStuff";
 import { editTask } from "./todoList/edit";
+import { completed } from "./completed";
 import './style.css'
 
 let projectSub = document.querySelector('#submitProject');
@@ -18,6 +19,7 @@ window.addEventListener('load', () => {
     getProjectID();
     expandTodo();
     deleteProject();
+    completed();
 })
 
 projectSub.addEventListener('click', (e) => {
@@ -29,6 +31,7 @@ projectSub.addEventListener('click', (e) => {
     expandProject();
     getProjectID();
     expandTodo();
+    completed();
     newProject.style.display = 'none';
 });
 
@@ -41,6 +44,7 @@ sub.addEventListener('click', (e) => {
     expandProject();
     getProjectID();
     expandTodo();
+    completed();
     newTask.style.display = 'none';
 })
 

@@ -11,6 +11,7 @@ function buildProject(project) {
     let remove = document.createElement('button');
 
     checkbox.setAttribute('type', 'checkbox');
+    checkbox.classList.add('checkbox');
     
     projectDivs.classList.add('projectDiv');
     projectDivs.setAttribute('id', listProjects.indexOf(project));

@@ -12,7 +12,7 @@ function editTask() {
     document.addEventListener('click', function (e) {
         if (e.target && e.target.id === 'editTaskButton') {
             edit.style.display = 'block';
-            let task = e.target.parentElement.parentElement.id;
+            let task = e.target.parentElement.parentElement.parentElement.id;
             let taskID = task.charAt(task.length - 1);
             editForm['eTitle'].value = todoList[taskID].title;
             editForm['eDate'].value = todoList[taskID].dueDate;

@@ -72,3 +72,8 @@
     display: flex;
     flex-direction: column;
 }
+
+input[type="submit"], button {
+    background: none;
+    border: solid 1px;
+}
