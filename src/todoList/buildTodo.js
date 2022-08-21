@@ -19,6 +19,7 @@ function buildTodo(todo, number) {
 
     checkbox.setAttribute('type', 'checkbox');
     checkbox.classList.add('checkbox');
+    checkbox.className += ' tasks'
 
     title.classList.add('taskTitle');
     title.innerText = todo.title

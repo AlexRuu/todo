@@ -6,18 +6,18 @@ function buildProject(project) {
     let task = document.createElement('div');
     let expand = document.createElement('div');
     let checkbox = document.createElement('input');
-    let title = document.createElement('label');
+    let title = document.createElement('span');
     let add = document.createElement('button');
     let remove = document.createElement('button');
 
     checkbox.setAttribute('type', 'checkbox');
     checkbox.classList.add('checkbox');
-    
+    checkbox.className += ' projects';
+
     projectDivs.classList.add('projectDiv');
     projectDivs.setAttribute('id', listProjects.indexOf(project));
 
     title.classList.add('pTitle')
-    title.setAttribute('for', listProjects.indexOf(project));
     title.innerText = project.title
 
     task.classList.add('task');
