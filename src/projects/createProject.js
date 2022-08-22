@@ -1,19 +1,20 @@
 let listProjects = [];
 let defaultProject;
 class project {
-    constructor(title) {
+    constructor(title, complete) {
         this.title = title;
+        this.complete = complete
     };
 };
-defaultProject = new project("Default")
+defaultProject = new project("Default", "incomplete")
 listProjects.push(defaultProject)
 
 function createProject() {
     let newProject; 
-
     let projectTitle = document.querySelector('#projectTitle').value;
+    let complete = 'incomplete'
 
-    newProject = new project(projectTitle);
+    newProject = new project(projectTitle, complete);
     if (projectTitle === '') {
         alert('Please fill out title')
     }

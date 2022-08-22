@@ -2,12 +2,13 @@ import { parentID } from "./taskAdd"
 let todoList = [];
 
 class todo {
-    constructor(title, dueDate, priority, description, project) {
+    constructor(title, dueDate, priority, description, project, complete) {
         this.title = title;
         this.dueDate = dueDate;
         this.priority = priority;
         this.description = description;
-        this.project = project
+        this.project = project;
+        this.complete = complete
     }
 }
 
@@ -22,8 +23,9 @@ function createTodo() {
     let tDate = document.querySelector('#date').value;
     let tPriority = document.querySelector('#priority').value;
     let tProject = parentID;
+    let tComplete = 'incomplete'
 
-    newTodo = new todo(tTitle, tDate, tPriority, tDescription, tProject);
+    newTodo = new todo(tTitle, tDate, tPriority, tDescription, tProject, tComplete);
     todoList.push(newTodo);
     localTask();
     todoForm.reset();
