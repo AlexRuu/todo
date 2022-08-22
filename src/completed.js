@@ -14,7 +14,7 @@ function completed() {
                     for (let i = 0; i < innerChecks.length; i++) {
                         innerChecks[i].checked = true;
                     }
-                    listProjects[parentCheck].complete = ' complete'
+                    listProjects[parentCheck].complete = 'complete'
                     for (let j = 0; j < todoList.length; j++) {
                         if (todoList[j].project === parentCheck) {
                             todoList[j].complete = 'complete'
@@ -55,7 +55,6 @@ function completed() {
                         innerCheckbox[j].checked = false
                         innerCheckbox[j].style.textDecoration = 'none';
                     }
-
                 }
                 else if (selected.className === 'taskDetail') {
                     selected.style.textDecoration = 'none';

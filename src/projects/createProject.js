@@ -10,20 +10,15 @@ defaultProject = new project("Default", "incomplete")
 listProjects.push(defaultProject)
 
 function createProject() {
-    let newProject; 
+    let newProject;
     let projectTitle = document.querySelector('#projectTitle').value;
     let complete = 'incomplete'
 
     newProject = new project(projectTitle, complete);
-    if (projectTitle === '') {
-        alert('Please fill out title')
-    }
-    else{
-        listProjects.push(newProject);
-        document.forms[0].reset();
-        localProject();
-        console.log(listProjects)
-    }
+    listProjects.push(newProject);
+    document.forms[0].reset();
+    localProject();
+    console.log(listProjects)
 }
 
 function localProject() {

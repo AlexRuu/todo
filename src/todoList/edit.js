@@ -18,7 +18,6 @@ function editTask() {
             editForm['eDate'].value = todoList[taskID].dueDate;
             editForm['ePriority'].value = todoList[taskID].priority;
             editForm['eDescription'].value = todoList[taskID].description;
-            console.log(todoList)
             subB.addEventListener('click', function (e) {
                 if (e.target && e.target.id === 'submitEdit') {
                     e.preventDefault();

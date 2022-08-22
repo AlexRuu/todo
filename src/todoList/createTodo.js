@@ -15,6 +15,24 @@ class todo {
 let defaultTask = new todo('Sample Title', '2022-03-23', 'High', 'Description goes here', '0')
 todoList.push(defaultTask)
 
+function dateIsValid(dateStr) {
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+
+    if (dateStr.match(regex) === null) {
+        return false;
+    }
+
+    const date = new Date(dateStr);
+
+    const timestamp = date.getTime();
+
+    if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
+        return false;
+    }
+
+    return date.toISOString().startsWith(dateStr);
+}
+
 function createTodo() {
     let newTodo;
     let todoForm = document.querySelector('.addTodo')
@@ -26,11 +44,16 @@ function createTodo() {
     let tComplete = 'incomplete'
 
     newTodo = new todo(tTitle, tDate, tPriority, tDescription, tProject, tComplete);
-    todoList.push(newTodo);
-    localTask();
-    todoForm.reset();
-}
 
+    if (dateIsValid(tDate) === true && tTitle != '') {
+        todoList.push(newTodo);
+        localTask();
+        todoForm.reset();
+    }
+    else {
+        alert('Please enter a valid date/title')
+    };
+}
 function localTask() {
     localStorage.setItem(`todoList`, JSON.stringify(todoList));
 }
@@ -38,5 +61,6 @@ function localTask() {
 export {
     createTodo,
     todoList,
-    localTask
+    localTask,
+    dateIsValid
 }

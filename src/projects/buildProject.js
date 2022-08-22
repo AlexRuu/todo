@@ -10,15 +10,20 @@ function buildProject(project) {
     let add = document.createElement('button');
     let remove = document.createElement('button');
 
+    projectDivs.classList.add('projectDiv');
+    projectDivs.setAttribute('id', listProjects.indexOf(project));
+
     checkbox.setAttribute('type', 'checkbox');
     checkbox.classList.add('checkbox');
     checkbox.className += ' projects';
 
-    projectDivs.classList.add('projectDiv');
-    projectDivs.setAttribute('id', listProjects.indexOf(project));
-
     title.classList.add('pTitle')
     title.innerText = project.title
+
+    if (project.complete === 'complete') {
+        title.style.textDecoration = 'line-through';
+        checkbox.checked = true;
+    }
 
     task.classList.add('task');
     task.setAttribute('id', `task${listProjects.indexOf(project)}`)

@@ -25,6 +25,15 @@ function buildTodo(todo, number) {
     title.innerText = todo.title
     title.setAttribute('for', `taskList${todoList.indexOf(todo)}`);
 
+    if (todo.complete === 'complete') {
+        checkbox.checked = true;
+        title.style.textDecoration = 'line-through';
+    }
+    else {
+        checkbox.checked = false;
+        title.style.textDecoration = 'none';
+    }
+
     taskInfo.classList.add('expandTask');
 
     dueDate.classList.add('taskDue');
@@ -38,17 +47,17 @@ function buildTodo(todo, number) {
 
     if (todo.dueDate >= formatToday) {
         if (difference.substring(0, 3) >= 10 || difference.substring(0, 1) > 5) {
-            task.style.background = 'none';
+            title.style.color = 'black';
         }
         else if (difference <= '3 days' || difference === '0 days') {
-            task.style.background = 'yellow';
+            title.style.color = 'yellow';
         }
         else {
-            task.style.border = 'solid red';
+            title.style.color = 'red';
         }
     }
     else {
-        task.style.border = 'solid red';
+        title.style.color = 'red';
     }
 
     dueDate.innerText = `Due ${formatted}`;
