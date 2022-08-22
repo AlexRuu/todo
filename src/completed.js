@@ -20,8 +20,6 @@ function completed() {
                             todoList[j].complete = 'complete'
                         }
                     }
-                    localProject();
-                    localTask();
                 }
                 else if (checkbox.parentElement.className === 'taskDetail') {
                     selected.style.textDecoration = 'line-through';
@@ -41,8 +39,6 @@ function completed() {
                         parentBox.style.textDecoration = 'line-through';
                         listProjects[parentBox.id].complete = 'complete'
                     }
-                    localProject();
-                    localTask();
                 }
             }
             else if (checkbox.checked === false) {
@@ -53,14 +49,29 @@ function completed() {
                     for (let i = 0; i < todoList.length; i++) {
                         if (todoList[i].project === selected.id) {
                             todoList[i].complete = 'incomplete';
-                            
                         }
                     }
                     for (let j = 0; j < innerCheckbox.length; j++) {
                         innerCheckbox[j].checked = false
+                        innerCheckbox[j].style.textDecoration = 'none';
+                    }
+
+                }
+                else if (selected.className === 'taskDetail') {
+                    selected.style.textDecoration = 'none';
+                    let parentBox = checkbox.parentElement.parentElement.parentElement.parentElement;
+                    let task = selected.id;
+                    let taskID = task.charAt(task.length - 1);
+                    let numberOfCompleted = Object.values(todoList).filter(task => task.project === parentBox.id && task.complete === 'complete').length;
+                    let numberOfTasks = Object.values(todoList).filter(task => task.project == parentBox.id).length;
+                    if (listProjects[parentBox.id].complete === 'complete' && numberOfCompleted === numberOfTasks) {
+                        listProjects[parentBox.id].complete = 'incomplete';
+                        todoList[taskID].complete = 'incomplete';
                     }
                 }
             }
+            localProject();
+            localTask();
         })
     })
 }
