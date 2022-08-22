@@ -67,6 +67,11 @@ function completed() {
                     if (listProjects[parentBox.id].complete === 'complete' && numberOfCompleted === numberOfTasks) {
                         listProjects[parentBox.id].complete = 'incomplete';
                         todoList[taskID].complete = 'incomplete';
+                        parentBox.style.textDecoration = 'none';
+                        parentBox.querySelector('input').checked = false;
+                    }
+                    else {
+                        todoList[taskID].complete = 'incomplete';
                     }
                 }
             }
