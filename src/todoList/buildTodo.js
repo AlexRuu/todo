@@ -6,6 +6,7 @@ function buildTodo(todo, number) {
     let task = document.createElement('div');
     let checkbox = document.createElement('input');
     let title = document.createElement('label');
+    let status = document.createElement('span')
     let taskInfo = document.createElement('div');
     let dueDate = document.createElement('div');
     let description = document.createElement('div');
@@ -21,20 +22,11 @@ function buildTodo(todo, number) {
     checkbox.classList.add('checkbox');
     checkbox.className += ' tasks'
 
+    status.classList.add('status');
+
     title.classList.add('taskTitle');
     title.innerText = todo.title
     title.setAttribute('for', `taskList${todoList.indexOf(todo)}`);
-
-    if (todo.complete === 'complete') {
-        checkbox.checked = true;
-        title.style.textDecoration = 'line-through';
-    }
-    else {
-        checkbox.checked = false;
-        title.style.textDecoration = 'none';
-    }
-
-    taskInfo.classList.add('expandTask');
 
     dueDate.classList.add('taskDue');
     let formatted = format(parseISO(todo.dueDate, 1), 'PPP')
@@ -44,23 +36,43 @@ function buildTodo(todo, number) {
     let difference = formatDistanceToNowStrict(formatDue, {
         unit: 'day'
     })
-
     if (todo.dueDate >= formatToday) {
-        if (difference.substring(0, 3) >= 10 || difference.substring(0, 1) > 5) {
+        if (difference.substring(0, 3) >= 10 || difference.substring(0, 1) >= 4) {
             title.style.color = 'black';
+
         }
         else if (difference <= '3 days' || difference === '0 days') {
-            title.style.color = 'yellow';
+            title.style.color = '#FFB81C';
+            title.appendChild(status)
+            status.textContent = 'Due Soon'
         }
         else {
-            title.style.color = 'red';
+            title.style.color = '#ff5757';
+            status.textContent = 'Overdue'
+            title.appendChild(status)
         }
     }
     else {
-        title.style.color = 'red';
+        title.style.color = '#ff5757';
+        status.textContent = 'Overdue'
     }
 
-    dueDate.innerText = `Due ${formatted}`;
+    dueDate.innerText = `Due: ${formatted}`;
+
+    if (todo.complete === 'complete') {
+        checkbox.checked = true;
+        title.style.textDecoration = 'line-through';
+        title.style.color = 'black';
+        title.remove(status);
+    }
+    else {
+        checkbox.checked = false;
+        title.style.textDecoration = 'none';
+        title.appendChild(status);
+    }
+
+    taskInfo.classList.add('expandTask');
+
 
     description.classList.add('taskDescription');
     description.innerText = `Description: ${todo.description}`;

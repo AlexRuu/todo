@@ -26,6 +26,7 @@
 
 * {
     font-family: 'Noto Sans KR', sans-serif;
+    background-color: #F9F9F9;
 }
 
 .pTitle {
@@ -52,8 +53,8 @@
     justify-content: center;
 }
 
-.addProject {
-    padding: 2rem;
+#createNew {
+    padding: 10px;
 }
 
 .pTitle,
@@ -113,16 +114,15 @@
 }
 
 .formTitle {
-    gap: 4rem;
+    gap: 3rem;
 }
 
 .taskFormTitle {
-    gap: 6rem;
+    gap: 5rem;
 }
 
 .editFormTitle {
-    gap: 6rem;
-    ;
+    gap: 7.6rem;
 }
 
 .fields {
@@ -132,6 +132,99 @@
 
 input[type="submit"],
 button {
-    background: none;
+    background: transparent;
     border: solid 1px;
+    border-radius: 10px;
+}
+
+
+button:hover, input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+#createNew {
+    color: black;
+    border: solid black;
+    margin: 10px;
+}
+
+input[type="submit"] {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 8rem;
+}
+
+#createNew:hover, input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+    transition: all .5s ease;
+}
+
+.expandContent {
+    margin-left: 33px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.taskButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.projectButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.addTask {
+    border-color: #76B947;
+    color: #76B947;
+}
+
+.addTask,
+.removeProject {
+    margin: 5px;
+    padding: 5px;
+}
+
+.editTaskButton {
+    border-color: #85A1F2;
+    color: #85A1F2;
+}
+
+.removeTask, .removeProject {
+    border-color: #ff5757;
+    color: #ff5757;
+}
+
+.editTaskButton,
+.removeTask {
+    margin: 5px;
+    padding: 8px;
+    align-items: center;
+}
+
+.expandTask {
+    margin-left: 20px;
+    margin-bottom: 13px;
+}
+
+.projectDisplay {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    padding: 30px;
+}
+
+.status {
+    font-size: 12px;
+    border: solid 1px;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 5px;
+    align-self: center;
 }

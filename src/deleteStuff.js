@@ -10,7 +10,7 @@ function deleteProject() {
     let removeP = document.querySelectorAll('.removeProject');
     removeP.forEach((button) => {
         button.addEventListener('click', function () {
-            let grandparent = this.parentElement.parentElement.id;
+            let grandparent = this.parentElement.parentElement.parentElement.id;
             listProjects.splice(grandparent, 1);
             localProject();
             for (let i = 0; i < todoList.length; i++) {

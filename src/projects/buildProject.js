@@ -7,6 +7,7 @@ function buildProject(project) {
     let expand = document.createElement('div');
     let checkbox = document.createElement('input');
     let title = document.createElement('span');
+    let buttonBox = document.createElement('div')
     let add = document.createElement('button');
     let remove = document.createElement('button');
 
@@ -23,10 +24,13 @@ function buildProject(project) {
     if (project.complete === 'complete') {
         title.style.textDecoration = 'line-through';
         checkbox.checked = true;
+        buttonBox.style.display = 'none';
     }
 
     task.classList.add('task');
     task.setAttribute('id', `task${listProjects.indexOf(project)}`)
+
+    buttonBox.classList.add('projectButtons');
 
     add.classList.add('addTask');
     add.setAttribute('id', 'addTask')
@@ -36,8 +40,10 @@ function buildProject(project) {
     remove.setAttribute('id', 'removeProject')
     remove.innerHTML = 'Remove Project'
 
+    buttonBox.append(add, remove)
+
     expand.classList.add('expandContent');
-    expand.append(task, add, remove)
+    expand.append(task, buttonBox)
 
     projectDivs.append(checkbox, title, expand)
     projectDisplay.appendChild(projectDivs);

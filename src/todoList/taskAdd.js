@@ -4,7 +4,7 @@ function getProjectID() {
     let add = document.querySelectorAll('.addTask');
     add.forEach((button) => {
         button.addEventListener('click', function() {
-            parentID = button.parentElement.parentElement.id;
+            parentID = button.parentElement.parentElement.parentElement.id;
         })
     })
 }
